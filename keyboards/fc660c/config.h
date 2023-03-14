@@ -64,6 +64,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
+// Potentially solves wakeup issues on M1 Macs.
+#define USB_SUSPEND_WAKEUP_DELAY 200
+
 // higher value means deeper actuation point, less sensitive
 // be careful and only make small adjustments (steps of 1 or 2).
 // too high and keys will fail to actuate. too low and keys will actuate spontaneously.
