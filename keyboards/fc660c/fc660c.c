@@ -27,3 +27,16 @@ void matrix_init_kb(void) {
 
 	matrix_init_user();
 }
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+    case 1:
+        //Insert LED
+        PORTB &= ~(1<<5);
+        break;
+    default: //  for any other layers, or the default layer
+        //Insert LED
+        PORTB |=  (1<<5);
+    }
+    return state;
+}
